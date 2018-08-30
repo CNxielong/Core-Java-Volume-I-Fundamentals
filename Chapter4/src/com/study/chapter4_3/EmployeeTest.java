@@ -19,6 +19,8 @@ public class EmployeeTest {
 		staff[1] = new Employee("B", 50000, 1989, 10, 1);
 		staff[2] = new Employee("C", 40000, 1990, 3, 15);
 
+//		Employee e = new Employee(); //”Ô∑®±®¥Ì The constructor Employee() is undefined
+		
 		// raise every's salary by 5%
 		for (Employee employee : staff) {
 			employee.raiseSalary(5);

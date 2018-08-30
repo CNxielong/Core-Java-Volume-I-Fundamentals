@@ -1,37 +1,24 @@
 package com.study.test;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
 
 public class Test {
+		
+	private String name;
+	private int age;
+	private boolean boyFriend;
 	
-	public static void main(String[] args) {
-		String s1 = "001.002.003";
-		String s2 = "001.003";
-		if (s1.contains(s2)) {
-			System.out.println(s1.contains(s2));
-		}else{
-			System.out.println(s1.contains(s2));
-		}
+	public Test() {//空参构造
+//		this()和this("name",  67, true);同时只能出现一个 否则构造器陷入死循环
+		this("name",  67, true);//this 指针调用非空构造参数
+		System.out.println("I am a boy:");
 	}
-	
 
-//	public static void main(String[] args) {
-//		HashMap<String, String> map = new HashMap();
-//		map.put("ABC", "ABC");
-//		map.put("BCD", "BCD");
-//		String s1 = map.get("ABC");
-//		abc(s1);
-////		abc2(map);
-//		
-//	}
-	
-	private static void abc(String s){
-		System.out.println(s);
+	public Test(String name, int age, boolean boyFriend) {
+//		this(); //语法报错Recursive constructor invocation Test() 地递归构造函数
+		System.out.println("I am a boy:");
+		this.name = name;
+		this.age = age;
+		this.boyFriend = boyFriend;
 	}
 	
-	private  void abc2(String s){
-//		System.out.println(map.get("ABC"));
-	}
 }
