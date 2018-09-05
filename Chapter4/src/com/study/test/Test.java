@@ -1,24 +1,40 @@
 package com.study.test;
 
-
 public class Test {
-		
-	private String name;
-	private int age;
-	private boolean boyFriend;
+
+	public static Long fibonacciRecursive(int i) {// 递归
+
+		if (i <= 2) {
+			return 1L;
+		} else {
+			return fibonacciRecursive(i - 1) + fibonacciRecursive(i - 2);
+		}
+
+	}
 	
-	public Test() {//空参构造
-//		this()和this("name",  67, true);同时只能出现一个 否则构造器陷入死循环
-		this("name",  67, true);//this 指针调用非空构造参数
-		System.out.println("I am a boy:");
+	
+	public static long fibonacciRecurrence(Long i) {// 递推
+		
+		if (i <= 2) {
+			return 1L;
+		} else {
+			Long  s1 = 1L, s2 = 1L, sn = 0L;
+			for (int j = 2; j < i; j++) {
+				sn = (long)(s1 + s2);
+				s1 = s2;
+				s2 = sn;
+			}
+			
+			return sn;
+		}
+
 	}
 
-	public Test(String name, int age, boolean boyFriend) {
-//		this(); //语法报错Recursive constructor invocation Test() 地递归构造函数
-		System.out.println("I am a boy:");
-		this.name = name;
-		this.age = age;
-		this.boyFriend = boyFriend;
+	public static void main(String[] args) {
+
+		Long result = fibonacciRecursive(0);
+		System.out.println(result);
+		Long result2 = fibonacciRecurrence(6L);
+		System.out.println(result2);
 	}
-	
 }
