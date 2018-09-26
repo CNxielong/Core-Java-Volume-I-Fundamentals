@@ -86,8 +86,11 @@ public class ReflectionTest {
 
 	/**
 	 * 
-	 * @Title: printMethods @Description: TODO(print all methods of a
-	 *         class) @param @param c1 参数 @return void 返回类型 @throws
+	 * @Title: printMethods 
+	 * @Description: TODO(print all methods of a class) 
+	 * @param c1 参数 
+	 * @return void 返回类型 
+	 * @throws
 	 */
 
 	public static void printMethods(Class c1) {
@@ -116,9 +119,13 @@ public class ReflectionTest {
 
 	/**
 	 * 
-	 * @Title: printFields @Description: TODO(Prints all fields of a
-	 * class) @param @param c1 参数 @return void 返回类型 @throws
+	 * @Title: printFields  
+	 * @Description: TODO(Prints all fields of a class)  
+	 * @param @param c1    参数  
+	 * @return void    返回类型  
+	 * @throws
 	 */
+	 
 	public static void printFields(Class c1) {
 		Field[] fields = c1.getDeclaredFields();
 		for (Field field : fields) {
