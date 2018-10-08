@@ -21,6 +21,8 @@ public class CopyofTest {
 		String[] b = {"A","B","CD"};
 		b = (String[])goodCopyOf(b, 10);
 		System.out.println(Arrays.toString(b));
+		b = (String[])goodCopy(b, 10);
+		System.out.println(Arrays.toString(b));
 		//b badCopyOf 
 		System.out.println("The following call will generate an exception");
 		b = (String[])badCopyOf(b, 10);//java.lang.ClassCastException:
@@ -69,5 +71,24 @@ public class CopyofTest {
 		System.arraycopy(a, 0, newArray, 0, Math.min(length, newLength));
 //		System.arraycopy(a, 0, newArray, 0, newLength);//java.lang.ArrayIndexOutOfBoundsException
 		return newArray;
+	}
+	
+	public static Object goodCopy(Object a, int newLenth){
+		//获得a的Class
+		Class c1 = a.getClass();
+		System.out.println("C1: "+c1);
+		//判断a是否为数组 否返回NULL
+		if( !c1.isArray() ) return null;
+		//获得c1 getComponentType
+		Class componentType = c1.getComponentType();
+		System.out.println("componentType: "+componentType);
+		//获得a的长度
+		int length = Array.getLength(a);
+		//Array.实例化
+//		Object newInstance = Array.newInstance(c1, Math.min(newLenth, length));// java.lang.ArrayStoreException
+		Object newInstance = Array.newInstance(componentType, newLenth);
+		//拷贝方法
+		System.arraycopy(a, 0, newInstance, 0, Math.min(newLenth, length));
+		return newInstance;
 	}
 }
