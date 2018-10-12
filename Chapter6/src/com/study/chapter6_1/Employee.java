@@ -11,7 +11,7 @@ import javax.print.attribute.standard.MediaSize.Other;
  * @Description: TODO(P214 程序清单6-1 继承Comparable接口) 
  * @author X-Dragon  
  * @date 2018年10月10日 下午5:29:49 
- *
+ * 
  */
 public class Employee implements Comparable<Employee> {
 	
