@@ -1,4 +1,6 @@
 package com.study.chapter6_2;
+
+
 /**
  * 
  * @ClassName: CloneTest  
@@ -10,7 +12,6 @@ package com.study.chapter6_2;
 public class CloneTest {
 
 	public static void main(String[] args) {
-		
 		Employee original = new Employee("EDG ClearLove",7777);
 		original.setHireday(2018, 10, 12);
 		try {
