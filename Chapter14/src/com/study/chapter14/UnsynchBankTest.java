@@ -2,8 +2,7 @@ package com.study.chapter14;
 
 /**
  * @Title: UnsynchBankTest
- * @Description: TODO(P642 This program show data corruption when multiple
- *               threads access a data structure)
+ * @Description: (P642 This program show data corruption when multiple threads access a data structure)
  * @author X-Dragon
  * @date 2018年11月2日 下午6:12:27
  * @version V1.0
@@ -16,7 +15,6 @@ public class UnsynchBankTest {
 	public static final int DELAY = 10;// 线程sleep
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// 新建一个账户数组
 		Bank bank = new Bank(NACCOUNTS, INITIAL_BALANCE);
 		// for循环
